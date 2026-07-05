@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Odak Kütüphane & Kafe — Kocaeli'nin sessiz çalışma alanı. Güçlü wifi, kaliteli kahve ve huzurlu bir ortamda odaklanın." />
+  <meta name="description" content="Odak Kütüphane & Kafe — Kocaeli Derince'nin sessiz çalışma alanı. Güçlü wifi, kaliteli kahve ve huzurlu bir ortamda odaklanın." />
   <meta name="theme-color" content="#2C1A0E" />
   <title>Odak — Kütüphane & Kafe</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -42,18 +42,27 @@
       background-color: #FAF7F2;
       color: #2C1A0E;
       font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
+
+    h1, h2, h3, h4 { letter-spacing: -0.01em; }
 
     /* Navbar scroll shadow */
-    #navbar { transition: box-shadow 0.3s ease; }
+    #navbar { transition: box-shadow 0.3s ease, background-color 0.3s ease; }
     #navbar.scrolled { box-shadow: 0 2px 24px rgba(44,26,14,0.10); }
 
-    /* Hero gradient overlay */
+    /* Hero arka plan görseli + degrade */
     .hero-bg {
       background:
-        linear-gradient(135deg, rgba(44,26,14,0.82) 0%, rgba(107,143,94,0.45) 100%),
+        linear-gradient(180deg,
+          rgba(44,26,14,0.72) 0%,
+          rgba(44,26,14,0.55) 45%,
+          rgba(44,26,14,0.78) 100%),
         url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
     }
+
+    /* Metin okunabilirliği için hafif gölge */
+    .text-shadow { text-shadow: 0 2px 16px rgba(0,0,0,0.45); }
 
     /* Section fade-in on scroll */
     .reveal {
@@ -85,6 +94,23 @@
       background: #6B8F5E;
       border-radius: 2px;
     }
+
+    /* Form input odak stili */
+    .form-input {
+      width: 100%;
+      background: #fff;
+      border: 1px solid rgba(201,168,130,0.4);
+      border-radius: 0.75rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      color: #2C1A0E;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      outline: none;
+    }
+    .form-input:focus {
+      border-color: #6B8F5E;
+      box-shadow: 0 0 0 3px rgba(107,143,94,0.15);
+    }
   </style>
 </head>
 
@@ -97,18 +123,19 @@
     <!-- Logo -->
     <a href="#hero" class="flex items-center gap-2 group">
       <span class="text-2xl font-serif font-bold text-espresso tracking-tight">Odak</span>
-      <span class="hidden sm:inline text-xs font-sans font-medium text-latte uppercase tracking-widest mt-1">Kütüphane & Kafe</span>
+      <span class="hidden sm:inline text-xs font-sans font-medium text-coffee/70 uppercase tracking-widest mt-1">Kütüphane & Kafe</span>
     </a>
 
     <!-- Desktop Links -->
     <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-espresso/70">
       <li><a href="#about"    class="hover:text-sage transition-colors">Hakkımızda</a></li>
       <li><a href="#services" class="hover:text-sage transition-colors">Hizmetler</a></li>
+      <li><a href="#pricing"  class="hover:text-sage transition-colors">Abonelik</a></li>
       <li><a href="#menu"     class="hover:text-sage transition-colors">Menü</a></li>
       <li><a href="#location" class="hover:text-sage transition-colors">Konum</a></li>
       <li><a href="#contact"
         class="bg-espresso text-cream px-5 py-2 rounded-full hover:bg-coffee transition-colors">
-        İletişim
+        Bize Ulaşın
       </a></li>
     </ul>
 
@@ -125,37 +152,38 @@
     <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium text-espresso/80">
       <li><a href="#about"    class="hover:text-sage" onclick="closeMobileMenu()">Hakkımızda</a></li>
       <li><a href="#services" class="hover:text-sage" onclick="closeMobileMenu()">Hizmetler</a></li>
+      <li><a href="#pricing"  class="hover:text-sage" onclick="closeMobileMenu()">Abonelik</a></li>
       <li><a href="#menu"     class="hover:text-sage" onclick="closeMobileMenu()">Menü</a></li>
       <li><a href="#location" class="hover:text-sage" onclick="closeMobileMenu()">Konum</a></li>
-      <li><a href="#contact"  class="hover:text-sage" onclick="closeMobileMenu()">İletişim</a></li>
+      <li><a href="#contact"  class="hover:text-sage" onclick="closeMobileMenu()">Bize Ulaşın</a></li>
     </ul>
   </div>
 </nav>
 
+
 <!-- ═══════════════════════ HERO ═══════════════════════ -->
 <section id="hero" class="hero-bg min-h-screen flex items-center justify-center text-center px-6">
-  <div class="max-w-2xl">
-    <p class="text-sage font-sans font-medium tracking-widest uppercase text-sm mb-4 reveal">
-      Kocaeli · Kütüphane & Kafe
+  <div class="max-w-2xl py-32">
+    <p class="text-latte font-sans font-semibold tracking-[0.25em] uppercase text-xs sm:text-sm mb-5 reveal text-shadow">
+      Kocaeli · Derince · Kütüphane & Kafe
     </p>
-    <h1 class="font-serif text-5xl md:text-7xl font-bold text-cream leading-tight mb-6 reveal">
+    <h1 class="font-serif text-6xl md:text-8xl font-bold text-cream leading-none mb-6 reveal text-shadow">
       Odak
     </h1>
-    <p class="font-serif text-xl md:text-2xl text-cream/80 mb-2 reveal">
+    <p class="font-serif italic text-2xl md:text-3xl text-cream/95 mb-4 reveal text-shadow">
       Düşün. Çalış. Yudum al.
     </p>
-    <p class="text-cream/60 font-sans text-base mb-10 reveal">
-      Sessiz bir alan, güçlü bir bağlantı ve iyi bir kahve.<br/>
+    <p class="text-cream/75 font-sans text-base md:text-lg leading-relaxed mb-10 reveal text-shadow">
+      Sessiz bir alan, güçlü bir bağlantı ve iyi bir kahve.<br class="hidden sm:block"/>
       Çalışmak için ihtiyacınız olan her şey bir arada.
     </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
+    <div class="flex justify-center reveal">
       <a href="#location"
-        class="bg-sage hover:bg-sagedark text-white font-sans font-medium px-8 py-3.5 rounded-full transition-colors">
+        class="inline-flex items-center gap-2 bg-sage hover:bg-sagedark text-white font-sans font-semibold px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-black/20">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/>
+        </svg>
         Bizi Bul
-      </a>
-      <a href="#menu"
-        class="border border-cream/50 hover:border-cream text-cream font-sans font-medium px-8 py-3.5 rounded-full transition-colors">
-        Menüyü Gör
       </a>
     </div>
   </div>
@@ -167,7 +195,7 @@
   <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
     <div class="reveal">
-      <p class="text-sage font-sans font-medium uppercase tracking-widest text-sm mb-3">Hakkımızda</p>
+      <p class="text-sage font-sans font-semibold uppercase tracking-widest text-sm mb-3">Hakkımızda</p>
       <div class="divider mb-6"></div>
       <h2 class="font-serif text-4xl font-bold text-espresso leading-snug mb-6">
         Çalışmak için<br/>tasarlanmış bir alan.
@@ -177,7 +205,7 @@
         Sınav hazırlığı, uzaktan çalışma ya da sadece odaklanmak istediğinizde yanınızdayız.
       </p>
       <p class="text-espresso/70 font-sans leading-relaxed">
-        Kocaeli'nin merkezinde, dikkat dağıtmayan sade bir ortam ve kaliteli hizmet sunuyoruz.
+        Kocaeli Derince'de, dikkat dağıtmayan sade bir ortam ve kaliteli hizmet sunuyoruz.
         Masanızı ayırtın, kahvenizi alın ve odaklanın.
       </p>
     </div>
@@ -198,7 +226,7 @@
 <!-- ═══════════════════════ HİZMETLER ═══════════════════════ -->
 <section id="services" class="py-24 px-6 bg-espresso">
   <div class="max-w-5xl mx-auto text-center mb-14 reveal">
-    <p class="text-sage font-sans font-medium uppercase tracking-widest text-sm mb-3">Hizmetlerimiz</p>
+    <p class="text-latte font-sans font-semibold uppercase tracking-widest text-sm mb-3">Hizmetlerimiz</p>
     <div class="divider mx-auto mb-6"></div>
     <h2 class="font-serif text-4xl font-bold text-cream">Neden Odak?</h2>
   </div>
@@ -206,7 +234,7 @@
   <div class="max-w-5xl mx-auto grid sm:grid-cols-3 gap-8">
 
     <!-- Kart 1 -->
-    <div class="bg-espresso/60 border border-latte/20 rounded-2xl p-8 text-center reveal">
+    <div class="bg-white/5 border border-latte/20 rounded-2xl p-8 text-center reveal">
       <div class="text-4xl mb-4">📚</div>
       <h3 class="font-serif text-xl font-semibold text-cream mb-3">Sessiz Çalışma</h3>
       <p class="text-cream/60 font-sans text-sm leading-relaxed">
@@ -215,16 +243,16 @@
     </div>
 
     <!-- Kart 2 -->
-    <div class="bg-espresso/60 border border-latte/20 rounded-2xl p-8 text-center reveal">
+    <div class="bg-white/5 border border-latte/20 rounded-2xl p-8 text-center reveal">
       <div class="text-4xl mb-4">☕</div>
       <h3 class="font-serif text-xl font-semibold text-cream mb-3">Kahve & İçecek</h3>
       <p class="text-cream/60 font-sans text-sm leading-relaxed">
-        Filtre kahveden latteyé, Türk kahvesinden soğuk içeceklere geniş bir menü seçeneği.
+        Filtre kahveden latteye, Türk kahvesinden soğuk içeceklere geniş bir menü seçeneği.
       </p>
     </div>
 
     <!-- Kart 3 -->
-    <div class="bg-espresso/60 border border-latte/20 rounded-2xl p-8 text-center reveal">
+    <div class="bg-white/5 border border-latte/20 rounded-2xl p-8 text-center reveal">
       <div class="text-4xl mb-4">📶</div>
       <h3 class="font-serif text-xl font-semibold text-cream mb-3">Güçlü İnternet</h3>
       <p class="text-cream/60 font-sans text-sm leading-relaxed">
@@ -236,154 +264,271 @@
 </section>
 
 
+<!-- ═══════════════════════ ABONELİKLER ═══════════════════════ -->
+<section id="pricing" class="py-24 px-6 bg-cream">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-10 reveal">
+      <p class="text-sage font-sans font-semibold uppercase tracking-widest text-sm mb-3">Abonelikler</p>
+      <div class="divider mx-auto mb-6"></div>
+      <h2 class="font-serif text-4xl font-bold text-espresso">Sabit Masanı Ayırt</h2>
+      <p class="text-espresso/60 font-sans mt-3 text-sm max-w-xl mx-auto">
+        Sana özel sabit masa ile düzenli çalışma alışkanlığı kur. Sana uygun süreyi seç, paketini belirle.
+      </p>
+    </div>
+
+    <!-- Paket seçici -->
+    <div class="flex items-center justify-center gap-2 mb-4 reveal">
+      <div class="bg-cream border border-latte/40 rounded-full p-1 inline-flex">
+        <button id="tab-standart" onclick="setPlan('standart')"
+          class="plan-tab px-6 py-2 rounded-full text-sm font-sans font-semibold transition-colors bg-espresso text-cream">
+          Standart
+        </button>
+        <button id="tab-plus" onclick="setPlan('plus')"
+          class="plan-tab px-6 py-2 rounded-full text-sm font-sans font-semibold transition-colors text-espresso/60">
+          Plus ✨
+        </button>
+      </div>
+    </div>
+    <div class="mb-12"></div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Günlük -->
+      <div class="menu-card bg-cream border border-latte/30 rounded-2xl p-7 text-center flex flex-col reveal">
+        <p class="font-sans font-semibold text-espresso/60 uppercase tracking-widest text-xs mb-2">Günlük</p>
+        <h3 class="font-serif text-2xl font-bold text-espresso mb-4">Deneme Günü</h3>
+        <p class="font-serif text-4xl font-bold text-sage mb-1">
+          <span data-std="200" data-plus="240">200</span>₺
+        </p>
+        <p class="text-espresso/60 text-xs font-sans mb-5">günlük / toplam <span data-std="200 ₺" data-plus="240 ₺">200 ₺</span></p>
+        <ul class="text-espresso/65 text-sm font-sans space-y-2 text-left mx-auto mb-6">
+          <li>📌 Kişiye özel masa</li>
+          <li>📶 Hızlı internet</li>
+          <li>🤫 Sessiz ortam</li>
+          <li class="plus-only hidden">☕ Günlük ücretsiz içecek</li>
+          <li class="plus-only hidden">🤝 Öncelikli destek</li>
+        </ul>
+        <a href="#contact" class="mt-auto border border-espresso/25 hover:bg-espresso hover:text-cream text-espresso font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
+          Başvur
+        </a>
+      </div>
+
+      <!-- Aylık -->
+      <div class="menu-card bg-cream border border-latte/30 rounded-2xl p-7 text-center flex flex-col reveal">
+        <p class="font-sans font-semibold text-espresso/60 uppercase tracking-widest text-xs mb-2">1 Aylık</p>
+        <h3 class="font-serif text-2xl font-bold text-espresso mb-4">Düzenli Çalışma</h3>
+        <p class="font-serif text-4xl font-bold text-sage mb-1">
+          <span data-std="175" data-plus="210">175</span>₺
+        </p>
+        <p class="text-espresso/60 text-xs font-sans mb-5">günlük / toplam <span data-std="5.250 ₺" data-plus="6.300 ₺">5.250 ₺</span> (30 gün)</p>
+        <ul class="text-espresso/65 text-sm font-sans space-y-2 text-left mx-auto mb-6">
+          <li>📌 Kişiye özel masa</li>
+          <li>📶 Hızlı internet</li>
+          <li>🤫 Sessiz ortam</li>
+          <li class="plus-only hidden">☕ Günlük ücretsiz içecek</li>
+          <li class="plus-only hidden">🤝 Öncelikli destek</li>
+        </ul>
+        <a href="#contact" class="mt-auto border border-espresso/25 hover:bg-espresso hover:text-cream text-espresso font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
+          Başvur
+        </a>
+      </div>
+
+      <!-- 3 Aylık -->
+      <div class="menu-card bg-espresso border-2 border-sage rounded-2xl p-7 text-center flex flex-col relative reveal">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sage text-white text-xs font-sans font-semibold px-4 py-1 rounded-full">
+          En Popüler
+        </span>
+        <p class="font-sans font-semibold text-latte uppercase tracking-widest text-xs mb-2">3 Aylık</p>
+        <h3 class="font-serif text-2xl font-bold text-cream mb-4">Sınav Dönemi</h3>
+        <p class="font-serif text-4xl font-bold text-sage mb-1">
+          <span data-std="150" data-plus="180">150</span>₺
+        </p>
+        <p class="text-cream/50 text-xs font-sans mb-5">günlük / toplam <span data-std="13.500 ₺" data-plus="16.200 ₺">13.500 ₺</span> (90 gün)</p>
+        <ul class="text-cream/70 text-sm font-sans space-y-2 text-left mx-auto mb-6">
+          <li>📌 Kişiye özel masa</li>
+          <li>📶 Hızlı internet</li>
+          <li>🤫 Sessiz ortam</li>
+          <li class="plus-only hidden">☕ Günlük ücretsiz içecek</li>
+          <li class="plus-only hidden">🤝 Öncelikli destek</li>
+        </ul>
+        <a href="#contact" class="mt-auto bg-sage hover:bg-sagedark text-white font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
+          Başvur
+        </a>
+      </div>
+
+      <!-- Sezonluk -->
+      <div class="menu-card bg-cream border border-latte/30 rounded-2xl p-7 text-center flex flex-col reveal">
+        <p class="font-sans font-semibold text-espresso/60 uppercase tracking-widest text-xs mb-2">Sezonluk</p>
+        <h3 class="font-serif text-2xl font-bold text-espresso mb-4">Eylül – Haziran</h3>
+        <p class="font-serif text-4xl font-bold text-sage mb-1">
+          <span data-std="100" data-plus="120">100</span>₺
+        </p>
+        <p class="text-espresso/60 text-xs font-sans mb-5">günlük / toplam <span data-std="30.000 ₺" data-plus="36.000 ₺">30.000 ₺</span> (~300 gün)</p>
+        <ul class="text-espresso/65 text-sm font-sans space-y-2 text-left mx-auto mb-6">
+          <li>📌 Kişiye özel masa</li>
+          <li>📶 Hızlı internet</li>
+          <li>🤫 Sessiz ortam</li>
+          <li>🗓️ Tüm eğitim yılı boyunca</li>
+          <li class="plus-only hidden">☕ Günlük ücretsiz içecek</li>
+          <li class="plus-only hidden">🤝 Öncelikli destek</li>
+        </ul>
+        <a href="#contact" class="mt-auto border border-espresso/25 hover:bg-espresso hover:text-cream text-espresso font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
+          Başvur
+        </a>
+      </div>
+
+    </div>
+
+    <p class="text-espresso/55 text-xs font-sans mt-10 text-center reveal">
+      Başvuru için iletişim formunu kullanabilir veya WhatsApp'tan yazabilirsiniz.
+    </p>
+  </div>
+</section>
+
+
 <!-- ═══════════════════════ MENÜ ═══════════════════════ -->
-<section id="menu" class="py-24 px-6 bg-cream">
+<section id="menu" class="py-24 px-6 bg-white">
   <div class="max-w-5xl mx-auto">
 
-    <div class="text-center mb-14 reveal">
-      <p class="text-sage font-sans font-medium uppercase tracking-widest text-sm mb-3">İçecekler</p>
+    <div class="text-center mb-12 reveal">
+      <p class="text-sage font-sans font-semibold uppercase tracking-widest text-sm mb-3">İçecekler</p>
       <div class="divider mx-auto mb-6"></div>
       <h2 class="font-serif text-4xl font-bold text-espresso">Menümüz</h2>
-      <p class="text-espresso/60 font-sans mt-3 text-sm">Çalışma molalarını güzel geçirin.</p>
+      <p class="text-espresso/60 font-sans mt-3 text-sm">Çalışma molalarınıza eşlik edecek, özenle hazırlanan içecekler.</p>
+    </div>
+
+    <!-- Üye avantajı bandı -->
+    <div class="bg-sage/10 border border-sage/25 rounded-2xl px-6 py-5 mb-12 text-center reveal">
+      <p class="font-sans text-espresso/80 text-sm md:text-base">
+        <span class="mr-1">🎉</span>
+        <span class="font-semibold text-sagedark">Üyelerimize özel:</span>
+        Tüm içeceklerde avantajlı üye fiyatları geçerlidir. Detaylar için bize ulaşın.
+      </p>
     </div>
 
     <!-- Sıcak İçecekler -->
-    <h3 class="font-serif text-2xl text-espresso font-semibold mb-6 reveal">Sıcak İçecekler</h3>
+    <h3 class="font-serif text-2xl text-espresso font-semibold mb-6 reveal">☕ Sıcak İçecekler</h3>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
 
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 reveal">
-        <div class="flex items-start justify-between">
-          <div>
-            <h4 class="font-serif font-semibold text-espresso text-lg">Filtre Kahve</h4>
-            <p class="text-espresso/55 text-sm mt-1">Sade ve dengeli, uzun seanslar için</p>
-          </div>
-          <span class="text-sage font-semibold font-sans text-sm whitespace-nowrap ml-4">40 ₺</span>
+      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
+        <span class="text-2xl mt-0.5">🫖</span>
+        <div>
+          <h4 class="font-serif font-semibold text-espresso text-lg">Filtre Kahve</h4>
+          <p class="text-espresso/55 text-sm mt-1">Uzun çalışma seansları için sade ve dengeli bir yol arkadaşı.</p>
         </div>
       </div>
 
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 reveal">
-        <div class="flex items-start justify-between">
-          <div>
-            <h4 class="font-serif font-semibold text-espresso text-lg">Americano</h4>
-            <p class="text-espresso/55 text-sm mt-1">Sade espresso, su ile yumuşatılmış</p>
-          </div>
-          <span class="text-sage font-semibold font-sans text-sm whitespace-nowrap ml-4">45 ₺</span>
+      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
+        <span class="text-2xl mt-0.5">💪</span>
+        <div>
+          <h4 class="font-serif font-semibold text-espresso text-lg">Americano</h4>
+          <p class="text-espresso/55 text-sm mt-1">Odak molalarında sade ve güçlü bir espresso deneyimi.</p>
         </div>
       </div>
 
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 reveal">
-        <div class="flex items-start justify-between">
-          <div>
-            <h4 class="font-serif font-semibold text-espresso text-lg">Latte</h4>
-            <p class="text-espresso/55 text-sm mt-1">Kremsi ve yumuşak, günün favorisi</p>
-          </div>
-          <span class="text-sage font-semibold font-sans text-sm whitespace-nowrap ml-4">55 ₺</span>
+      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
+        <span class="text-2xl mt-0.5">🥛</span>
+        <div>
+          <h4 class="font-serif font-semibold text-espresso text-lg">Latte</h4>
+          <p class="text-espresso/55 text-sm mt-1">Kremsi, yumuşak içimli; günün her saati için klasik seçim.</p>
         </div>
       </div>
 
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 reveal">
-        <div class="flex items-start justify-between">
-          <div>
-            <h4 class="font-serif font-semibold text-espresso text-lg">Cappuccino</h4>
-            <p class="text-espresso/55 text-sm mt-1">Köpüklü, dengeli ve klasik</p>
-          </div>
-          <span class="text-sage font-semibold font-sans text-sm whitespace-nowrap ml-4">55 ₺</span>
+      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
+        <span class="text-2xl mt-0.5">☁️</span>
+        <div>
+          <h4 class="font-serif font-semibold text-espresso text-lg">Cappuccino</h4>
+          <p class="text-espresso/55 text-sm mt-1">Bol köpüklü ve dengeli; kahve ile sütün en tatlı buluşması.</p>
         </div>
       </div>
 
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 reveal">
-        <div class="flex items-start justify-between">
-          <div>
-            <h4 class="font-serif font-semibold text-espresso text-lg">Türk Kahvesi</h4>
-            <p class="text-espresso/55 text-sm mt-1">Geleneksel, sade veya şekerli</p>
-          </div>
-          <span class="text-sage font-semibold font-sans text-sm whitespace-nowrap ml-4">40 ₺</span>
+      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
+        <span class="text-2xl mt-0.5">🇹🇷</span>
+        <div>
+          <h4 class="font-serif font-semibold text-espresso text-lg">Türk Kahvesi</h4>
+          <p class="text-espresso/55 text-sm mt-1">Közde pişmiş tadıyla geleneksel lezzet; sade, orta veya şekerli.</p>
         </div>
       </div>
 
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 reveal">
-        <div class="flex items-start justify-between">
-          <div>
-            <h4 class="font-serif font-semibold text-espresso text-lg">Çay / Bitki Çayı</h4>
-            <p class="text-espresso/55 text-sm mt-1">Ihlamur, ada çayı ve demlik çay</p>
-          </div>
-          <span class="text-sage font-semibold font-sans text-sm whitespace-nowrap ml-4">30 ₺</span>
+      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
+        <span class="text-2xl mt-0.5">🌿</span>
+        <div>
+          <h4 class="font-serif font-semibold text-espresso text-lg">Çay & Bitki Çayları</h4>
+          <p class="text-espresso/55 text-sm mt-1">Demlik çay, ıhlamur, ada çayı ve papatya; içinizi ısıtan seçenekler.</p>
         </div>
       </div>
 
     </div>
 
     <!-- Soğuk İçecekler -->
-    <h3 class="font-serif text-2xl text-espresso font-semibold mb-6 reveal">Soğuk İçecekler</h3>
+    <h3 class="font-serif text-2xl text-espresso font-semibold mb-6 reveal">🧊 Soğuk İçecekler</h3>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 reveal">
-        <div class="flex items-start justify-between">
-          <div>
-            <h4 class="font-serif font-semibold text-espresso text-lg">Cold Brew</h4>
-            <p class="text-espresso/55 text-sm mt-1">12 saat demlenen soğuk kahve</p>
-          </div>
-          <span class="text-sage font-semibold font-sans text-sm whitespace-nowrap ml-4">65 ₺</span>
+      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
+        <span class="text-2xl mt-0.5">🌙</span>
+        <div>
+          <h4 class="font-serif font-semibold text-espresso text-lg">Cold Brew</h4>
+          <p class="text-espresso/55 text-sm mt-1">12 saat sabırla demlenen, yumuşak ve ferahlatıcı soğuk kahve.</p>
         </div>
       </div>
 
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 reveal">
-        <div class="flex items-start justify-between">
-          <div>
-            <h4 class="font-serif font-semibold text-espresso text-lg">Iced Latte</h4>
-            <p class="text-espresso/55 text-sm mt-1">Buzlu latte, yaz seansları için</p>
-          </div>
-          <span class="text-sage font-semibold font-sans text-sm whitespace-nowrap ml-4">60 ₺</span>
+      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
+        <span class="text-2xl mt-0.5">🧋</span>
+        <div>
+          <h4 class="font-serif font-semibold text-espresso text-lg">Iced Latte</h4>
+          <p class="text-espresso/55 text-sm mt-1">Buz gibi süt ve espresso; sıcak günlerin kurtarıcısı.</p>
         </div>
       </div>
 
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 reveal">
-        <div class="flex items-start justify-between">
-          <div>
-            <h4 class="font-serif font-semibold text-espresso text-lg">Limonata / Meyve Suyu</h4>
-            <p class="text-espresso/55 text-sm mt-1">Kahve içmeyenler için taze alternatif</p>
-          </div>
-          <span class="text-sage font-semibold font-sans text-sm whitespace-nowrap ml-4">35 ₺</span>
+      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
+        <span class="text-2xl mt-0.5">🍋</span>
+        <div>
+          <h4 class="font-serif font-semibold text-espresso text-lg">Limonata & Meyve Suları</h4>
+          <p class="text-espresso/55 text-sm mt-1">Kahve içmeyenler için taze sıkılmış, ferah alternatifler.</p>
         </div>
       </div>
 
     </div>
 
-    <p class="text-espresso/40 text-xs font-sans mt-8 text-center reveal">
-      * Fiyatlar değişebilir. Güncel liste için lütfen bize ulaşın.
+    <p class="text-espresso/55 text-xs font-sans mt-10 text-center reveal">
+      Güncel menü ve üye fiyatları için şubemize uğrayabilir veya bize yazabilirsiniz.
     </p>
   </div>
 </section>
 
 
 <!-- ═══════════════════════ KONUM & SAATLER ═══════════════════════ -->
-<section id="location" class="py-24 px-6 bg-white">
+<section id="location" class="py-24 px-6 bg-cream">
   <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-start">
 
     <!-- Harita -->
     <div class="reveal">
-      <p class="text-sage font-sans font-medium uppercase tracking-widest text-sm mb-3">Konum</p>
+      <p class="text-sage font-sans font-semibold uppercase tracking-widest text-sm mb-3">Konum</p>
       <div class="divider mb-6"></div>
       <h2 class="font-serif text-4xl font-bold text-espresso mb-6">Bizi Bulun</h2>
 
       <div class="rounded-2xl overflow-hidden shadow-lg mb-6">
-        <!-- Kocaeli merkezi gösterimi — gerçek adres eklenince src güncellenebilir -->
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48368.23!2d29.9!3d40.77!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb49f0b09c3a1d%3A0x5b5d9a0e1c7a8e2f!2sKocaeli%2C%20T%C3%BCrkiye!5e0!3m2!1str!2str!4v1700000000000"
-          width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade" class="w-full">
+          src="https://maps.google.com/maps?q=40.780776,29.810614&z=16&hl=tr&output=embed"
+          width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" class="w-full" title="Odak Kütüphane & Kafe konumu">
         </iframe>
       </div>
 
-      <p class="text-espresso/70 font-sans text-sm flex items-start gap-2">
+      <p class="text-espresso/70 font-sans text-sm flex items-start gap-2 mb-3">
         <span class="text-sage mt-0.5">📍</span>
-        Aliağa Mah. Sessizlik Sok. No:7, Kocaeli
+        Aliağa Mah. Sessizlik Sok. No:7, Derince / Kocaeli
       </p>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=40.780776,29.810614" target="_blank" rel="noopener"
+        class="inline-flex items-center gap-2 text-sage hover:text-sagedark font-sans font-semibold text-sm transition-colors">
+        🧭 Yol Tarifi Al
+      </a>
     </div>
 
     <!-- Saatler -->
     <div class="reveal">
-      <p class="text-sage font-sans font-medium uppercase tracking-widest text-sm mb-3">Çalışma Saatleri</p>
+      <p class="text-sage font-sans font-semibold uppercase tracking-widest text-sm mb-3">Çalışma Saatleri</p>
       <div class="divider mb-6"></div>
       <h2 class="font-serif text-4xl font-bold text-espresso mb-8">Her Gün Açığız</h2>
 
@@ -405,7 +550,7 @@
       <div class="mt-8 bg-cream rounded-2xl p-6">
         <p class="font-serif text-espresso font-semibold mb-1">Rezervasyon & Bilgi</p>
         <p class="text-espresso/60 text-sm font-sans mb-4">Masanızı ayırtmak veya bilgi almak için bize ulaşın.</p>
-        <a href="https://wa.me/905001234567"
+        <a href="https://wa.me/905068780341"
           class="inline-flex items-center gap-2 bg-sage hover:bg-sagedark text-white font-sans font-medium px-6 py-3 rounded-full transition-colors text-sm">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -419,38 +564,104 @@
 </section>
 
 
-<!-- ═══════════════════════ İLETİŞİM ═══════════════════════ -->
-<section id="contact" class="py-24 px-6 bg-cream">
-  <div class="max-w-3xl mx-auto text-center reveal">
-    <p class="text-sage font-sans font-medium uppercase tracking-widest text-sm mb-3">İletişim</p>
-    <div class="divider mx-auto mb-6"></div>
-    <h2 class="font-serif text-4xl font-bold text-espresso mb-4">Bizimle Bağlantıya Geçin</h2>
-    <p class="text-espresso/60 font-sans mb-12">
-      Sorularınız için bize ulaşabilir, sosyal medyadan takip edebilirsiniz.
-    </p>
+<!-- ═══════════════════════ BİZE ULAŞIN ═══════════════════════ -->
+<section id="contact" class="py-24 px-6 bg-white">
+  <div class="max-w-5xl mx-auto">
 
-    <div class="grid sm:grid-cols-3 gap-6">
+    <div class="text-center mb-14 reveal">
+      <p class="text-sage font-sans font-semibold uppercase tracking-widest text-sm mb-3">İletişim</p>
+      <div class="divider mx-auto mb-6"></div>
+      <h2 class="font-serif text-4xl font-bold text-espresso mb-4">Bize Ulaşın</h2>
+      <p class="text-espresso/60 font-sans">
+        Franchise, yardım veya başvuru — konunuzu seçin, mesajınızı yazın, size dönelim.
+      </p>
+    </div>
 
-      <a href="tel:+905001234567"
-        class="group bg-white border border-latte/30 rounded-2xl p-6 hover:border-sage/50 transition-all hover:shadow-md">
-        <div class="text-3xl mb-3">📞</div>
-        <p class="font-serif font-semibold text-espresso group-hover:text-sage transition-colors">Telefon</p>
-        <p class="text-espresso/50 text-sm mt-1">0500 123 45 67</p>
-      </a>
+    <div class="grid md:grid-cols-5 gap-10 items-start">
 
-      <a href="https://wa.me/905001234567"
-        class="group bg-white border border-latte/30 rounded-2xl p-6 hover:border-sage/50 transition-all hover:shadow-md">
-        <div class="text-3xl mb-3">💬</div>
-        <p class="font-serif font-semibold text-espresso group-hover:text-sage transition-colors">WhatsApp</p>
-        <p class="text-espresso/50 text-sm mt-1">Hızlıca yazın</p>
-      </a>
+      <!-- İletişim kartları -->
+      <div class="md:col-span-2 space-y-4 reveal">
 
-      <a href="https://instagram.com/odakkafe" target="_blank" rel="noopener"
-        class="group bg-white border border-latte/30 rounded-2xl p-6 hover:border-sage/50 transition-all hover:shadow-md">
-        <div class="text-3xl mb-3">📸</div>
-        <p class="font-serif font-semibold text-espresso group-hover:text-sage transition-colors">Instagram</p>
-        <p class="text-espresso/50 text-sm mt-1">@odakkafe</p>
-      </a>
+        <a href="tel:+905068780341"
+          class="group flex items-center gap-4 bg-white border border-latte/30 rounded-2xl p-5 hover:border-sage/50 transition-all hover:shadow-md">
+          <div class="text-2xl">📞</div>
+          <div class="text-left">
+            <p class="font-serif font-semibold text-espresso group-hover:text-sage transition-colors">Telefon</p>
+            <p class="text-espresso/60 text-sm mt-0.5">0506 878 03 41</p>
+          </div>
+        </a>
+
+        <a href="https://wa.me/905068780341"
+          class="group flex items-center gap-4 bg-white border border-latte/30 rounded-2xl p-5 hover:border-sage/50 transition-all hover:shadow-md">
+          <div class="text-2xl">💬</div>
+          <div class="text-left">
+            <p class="font-serif font-semibold text-espresso group-hover:text-sage transition-colors">WhatsApp</p>
+            <p class="text-espresso/60 text-sm mt-0.5">Hızlıca yazın</p>
+          </div>
+        </a>
+
+        <a href="mailto:derincekutuphane@gmail.com"
+          class="group flex items-center gap-4 bg-white border border-latte/30 rounded-2xl p-5 hover:border-sage/50 transition-all hover:shadow-md">
+          <div class="text-2xl">✉️</div>
+          <div class="text-left">
+            <p class="font-serif font-semibold text-espresso group-hover:text-sage transition-colors">E-posta</p>
+            <p class="text-espresso/60 text-sm mt-0.5 break-all">derincekutuphane@gmail.com</p>
+          </div>
+        </a>
+
+        <a href="https://instagram.com/odakkafe" target="_blank" rel="noopener"
+          class="group flex items-center gap-4 bg-white border border-latte/30 rounded-2xl p-5 hover:border-sage/50 transition-all hover:shadow-md">
+          <div class="text-2xl">📸</div>
+          <div class="text-left">
+            <p class="font-serif font-semibold text-espresso group-hover:text-sage transition-colors">Instagram</p>
+            <p class="text-espresso/60 text-sm mt-0.5">@odakkafe</p>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Mail formu -->
+      <div class="md:col-span-3 bg-white border border-latte/30 rounded-2xl p-8 shadow-sm reveal">
+        <form id="contact-form" class="space-y-5">
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="cf-name" class="block text-sm font-medium text-espresso/80 mb-1.5">Adınız Soyadınız</label>
+              <input id="cf-name" type="text" class="form-input" placeholder="Adınız Soyadınız" required />
+            </div>
+            <div>
+              <label for="cf-email" class="block text-sm font-medium text-espresso/80 mb-1.5">E-posta Adresiniz</label>
+              <input id="cf-email" type="email" class="form-input" placeholder="ornek@mail.com" required />
+            </div>
+          </div>
+
+          <div>
+            <label for="cf-subject" class="block text-sm font-medium text-espresso/80 mb-1.5">Konu</label>
+            <select id="cf-subject" class="form-input" required>
+              <option value="" disabled selected>Konu seçin…</option>
+              <option value="Franchise">Franchise</option>
+              <option value="Yardım">Yardım</option>
+              <option value="Başvuru">Başvuru</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="cf-message" class="block text-sm font-medium text-espresso/80 mb-1.5">Mesajınız</label>
+            <textarea id="cf-message" rows="5" class="form-input resize-none" placeholder="Mesajınızı buraya yazın…" required></textarea>
+          </div>
+
+          <button id="cf-submit" type="submit"
+            class="w-full bg-espresso hover:bg-coffee text-cream font-sans font-semibold py-3.5 rounded-full transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
+            ✉️ Mail Gönder
+          </button>
+
+          <p id="cf-status" class="hidden text-sm text-center font-medium"></p>
+
+          <p class="text-espresso/55 text-xs text-center">
+            Mesajınız doğrudan <span class="font-medium">derincekutuphane@gmail.com</span> adresine iletilir.
+          </p>
+        </form>
+      </div>
 
     </div>
   </div>
@@ -458,13 +669,22 @@
 
 
 <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
-<footer class="bg-espresso py-10 px-6">
-  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-    <div class="text-center sm:text-left">
-      <p class="font-serif text-xl font-bold text-cream">Odak</p>
-      <p class="text-cream/40 text-xs font-sans mt-1">Kütüphane & Kafe · Kocaeli</p>
+<footer class="bg-espresso py-12 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
+      <div class="text-center sm:text-left">
+        <p class="font-serif text-2xl font-bold text-cream">Odak</p>
+        <p class="text-cream/60 text-xs font-sans mt-1">Kütüphane & Kafe · Derince / Kocaeli</p>
+      </div>
+      <div class="text-center sm:text-right text-cream/50 text-xs font-sans space-y-1">
+        <p>📞 0506 878 03 41</p>
+        <p>✉️ derincekutuphane@gmail.com</p>
+        <p>🕙 Her gün 10:00 – 22:00</p>
+      </div>
     </div>
-    <p class="text-cream/30 text-xs font-sans">© 2026 Odak Kütüphane & Kafe. Tüm hakları saklıdır.</p>
+    <div class="border-t border-cream/10 pt-6 text-center">
+      <p class="text-cream/50 text-xs font-sans">© 2026 Odak Kütüphane & Kafe. Tüm hakları saklıdır.</p>
+    </div>
   </div>
 </footer>
 
@@ -511,6 +731,76 @@
   }, { threshold: 0.12 });
 
   reveals.forEach(el => observer.observe(el));
+
+  // Abonelik: Standart / Plus paket geçişi
+  function setPlan(plan) {
+    const isPlus = plan === 'plus';
+
+    document.querySelectorAll('#pricing [data-std]').forEach(el => {
+      el.textContent = isPlus ? el.dataset.plus : el.dataset.std;
+    });
+
+    document.querySelectorAll('#pricing .plus-only').forEach(el => {
+      el.classList.toggle('hidden', !isPlus);
+    });
+
+    const tabStd  = document.getElementById('tab-standart');
+    const tabPlus = document.getElementById('tab-plus');
+    tabStd.className  = 'plan-tab px-6 py-2 rounded-full text-sm font-sans font-semibold transition-colors ' + (isPlus ? 'text-espresso/60' : 'bg-espresso text-cream');
+    tabPlus.className = 'plan-tab px-6 py-2 rounded-full text-sm font-sans font-semibold transition-colors ' + (isPlus ? 'bg-sage text-white' : 'text-espresso/60');
+  }
+
+  // İletişim formu: FormSubmit servisi üzerinden arka planda mail gönderir.
+  // İlk gönderimde FormSubmit, derincekutuphane@gmail.com adresine tek seferlik
+  // bir onay maili yollar; onaylandıktan sonra tüm mesajlar otomatik iletilir.
+  const form      = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('cf-submit');
+  const statusEl  = document.getElementById('cf-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name    = document.getElementById('cf-name').value.trim();
+    const email   = document.getElementById('cf-email').value.trim();
+    const subject = document.getElementById('cf-subject').value;
+    const message = document.getElementById('cf-message').value.trim();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Gönderiliyor…';
+    statusEl.classList.add('hidden');
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/derincekutuphane@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message,
+          _subject: `[${subject}] ${name}`,
+          _replyto: email,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+
+      if (!res.ok) throw new Error('Gönderim başarısız');
+
+      form.reset();
+      statusEl.textContent = '✅ Mesajınız gönderildi. En kısa sürede size döneceğiz.';
+      statusEl.className = 'text-sm text-center font-medium text-sagedark';
+    } catch (err) {
+      // Servis ulaşılamazsa mail uygulamasına yönlendir (yedek yöntem)
+      statusEl.textContent = '⚠️ Gönderilemedi, mail uygulamanız açılıyor…';
+      statusEl.className = 'text-sm text-center font-medium text-red-600';
+      const mailSubject = encodeURIComponent(`[${subject}] ${name}`);
+      const mailBody    = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+      window.location.href =
+        `mailto:derincekutuphane@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = '✉️ Mail Gönder';
+    }
+  });
 </script>
 
 </body>
