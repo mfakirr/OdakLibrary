@@ -271,9 +271,13 @@
     <div class="text-center mb-10 reveal">
       <p class="text-sage font-sans font-semibold uppercase tracking-widest text-sm mb-3">Abonelikler</p>
       <div class="divider mx-auto mb-6"></div>
-      <h2 class="font-serif text-4xl font-bold text-espresso">Sabit Masanı Ayırt</h2>
+      <h2 class="font-serif text-4xl font-bold text-espresso">Masanı Ayırt</h2>
       <p class="text-espresso/60 font-sans mt-3 text-sm max-w-xl mx-auto">
-        Sana özel sabit masa ile düzenli çalışma alışkanlığı kur. Sana uygun süreyi seç, paketini belirle.
+        İster sana özel sabit masada çalış, ister gününe göre yerini değiştir — çalışma şeklin tamamen sana kalmış.
+        Sana uygun süreyi seç, masanı ayırt.
+      </p>
+      <p class="inline-block bg-sage/10 border border-sage/25 text-sagedark font-sans font-semibold text-sm rounded-full px-5 py-2 mt-5">
+        🎉 Avantajlı erken kayıt fiyatlarıdır
       </p>
     </div>
 
@@ -307,7 +311,8 @@
           <li>📶 Hızlı internet</li>
           <li>🤫 Sessiz ortam</li>
           <li>📝 Deneme sınavı ücretsiz</li>
-          <li>☕ Tüm içecekler %25 indirimli</li>
+          <li>☕ Her gün ilk içecek ücretsiz</li>
+          <li>🥤 Tüm içecekler %25 indirimli</li>
         </ul>
         <a href="#contact" class="mt-auto border border-espresso/25 hover:bg-espresso hover:text-cream text-espresso font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
           Başvur
@@ -328,7 +333,8 @@
           <li>📶 Hızlı internet</li>
           <li>🤫 Sessiz ortam</li>
           <li>📝 Deneme sınavı ücretsiz</li>
-          <li>☕ Tüm içecekler %50 indirimli</li>
+          <li>☕ Her gün ilk içecek ücretsiz</li>
+          <li>🥤 Tüm içecekler %50 indirimli</li>
           <li>🤝 Destek</li>
         </ul>
         <a href="#contact" class="mt-auto bg-sage hover:bg-sagedark text-white font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
@@ -595,12 +601,17 @@
 
           <div>
             <label for="cf-subject" class="block text-sm font-medium text-espresso/80 mb-1.5">Konu</label>
-            <select id="cf-subject" class="form-input" required>
+            <select id="cf-subject" class="form-input" required onchange="toggleAgeField()">
               <option value="" disabled selected>Konu seçin…</option>
               <option value="Franchise">Franchise</option>
               <option value="Yardım">Yardım</option>
               <option value="Başvuru">Başvuru</option>
             </select>
+          </div>
+
+          <div id="cf-age-wrap" class="hidden">
+            <label for="cf-age" class="block text-sm font-medium text-espresso/80 mb-1.5">Yaşınız</label>
+            <input id="cf-age" type="number" min="10" max="99" class="form-input" placeholder="Örn: 21" />
           </div>
 
           <div>
@@ -697,12 +708,20 @@
   const submitBtn = document.getElementById('cf-submit');
   const statusEl  = document.getElementById('cf-status');
 
+  // "Başvuru" seçilince yaş alanını göster
+  function toggleAgeField() {
+    const isApplication = document.getElementById('cf-subject').value === 'Başvuru';
+    document.getElementById('cf-age-wrap').classList.toggle('hidden', !isApplication);
+    document.getElementById('cf-age').required = isApplication;
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name    = document.getElementById('cf-name').value.trim();
     const email   = document.getElementById('cf-email').value.trim();
     const subject = document.getElementById('cf-subject').value;
     const message = document.getElementById('cf-message').value.trim();
+    const age     = subject === 'Başvuru' ? document.getElementById('cf-age').value.trim() : '';
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Gönderiliyor…';
@@ -715,6 +734,7 @@
         body: JSON.stringify({
           name: name,
           email: email,
+          ...(age && { yas: age }),
           message: message,
           _subject: `[${subject}] ${name}`,
           _replyto: email,
@@ -733,7 +753,7 @@
       statusEl.textContent = '⚠️ Gönderilemedi, mail uygulamanız açılıyor…';
       statusEl.className = 'text-sm text-center font-medium text-red-600';
       const mailSubject = encodeURIComponent(`[${subject}] ${name}`);
-      const mailBody    = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+      const mailBody    = encodeURIComponent(`${message}\n\n— ${name} (${email})${age ? `, yaş: ${age}` : ''}`);
       window.location.href =
         `mailto:derincekutuphane@gmail.com?subject=${mailSubject}&body=${mailBody}`;
     } finally {
