@@ -328,64 +328,107 @@
         İster sana özel sabit masada çalış, ister gününe göre yerini değiştir — çalışma şeklin tamamen sana kalmış.
         Sana uygun süreyi seç, masanı ayırt.
       </p>
+      <p class="inline-flex items-center gap-2 bg-sage/10 border border-sage/25 text-sagedark font-sans font-medium text-sm rounded-full px-5 py-2 mt-5">
+        🎁 Her üyelikte günün ikramı dahil — kahve ya da çay, seçim senin.
+      </p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
 
       <!-- Günlük Giriş -->
-      <div class="menu-card bg-white border border-latte/30 rounded-2xl p-7 text-center flex flex-col reveal">
-        <p class="font-sans font-semibold text-espresso/60 uppercase tracking-widest text-xs mb-2">Günlük</p>
-        <h3 class="font-serif text-2xl font-bold text-espresso mb-4">Günlük Giriş</h3>
-        <p class="font-serif text-4xl font-bold text-sage mb-1">200₺</p>
-        <p class="text-espresso/60 text-xs font-sans mb-5">günlük</p>
-        <ul class="text-espresso/65 text-sm font-sans space-y-2 text-left mx-auto mb-6">
+      <div class="menu-card bg-white border border-latte/30 rounded-2xl p-7 flex flex-col reveal">
+        <p class="font-sans font-semibold text-espresso/60 uppercase tracking-[0.18em] text-xs mb-1.5 text-center">Günlük</p>
+        <h3 class="font-serif text-2xl font-bold text-espresso mb-5 text-center">Günlük Giriş</h3>
+
+        <div class="space-y-2 mb-3">
+          <div class="flex items-center justify-between bg-latte/15 border border-latte/40 rounded-xl px-4 py-3">
+            <span class="text-espresso/75 text-sm font-sans font-medium">✨ Özel içecek ikramlı</span>
+            <span class="font-serif font-bold text-coffee text-xl">250₺</span>
+          </div>
+          <div class="flex items-center justify-between bg-cream rounded-xl px-4 py-3">
+            <span class="text-espresso/75 text-sm font-sans font-medium">☕ Kahve ikramlı</span>
+            <span class="font-serif font-bold text-espresso text-xl">200₺</span>
+          </div>
+          <div class="flex items-center justify-between bg-sage/10 border border-sage/30 rounded-xl px-4 py-3">
+            <span class="text-espresso/75 text-sm font-sans font-medium">🍵 Çay ikramlı</span>
+            <span class="font-serif font-bold text-sagedark text-2xl">150₺</span>
+          </div>
+        </div>
+        <p class="text-espresso/60 text-xs font-sans italic leading-relaxed mb-5 px-1">
+          ✨ Özel içecek: mocha, aromalı latte ve şuruplu kahveler gibi imza lezzetler.
+        </p>
+
+        <ul class="w-full text-espresso/70 text-sm font-sans space-y-2.5 pt-5 border-t border-latte/25 mb-6">
           <li>📌 Kişiye özel masa</li>
           <li>📶 Hızlı internet</li>
           <li>🤫 Sessiz ortam</li>
-          <li>🎁 Hediye içecek</li>
           <li>📝 Deneme sınavı 150₺</li>
         </ul>
-        <a href="#contact" class="mt-auto border border-espresso/25 hover:bg-espresso hover:text-cream text-espresso font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
+        <a href="#contact" class="mt-auto text-center border border-espresso/25 hover:bg-espresso hover:text-cream text-espresso font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
           Başvur
         </a>
       </div>
 
       <!-- Aylık Üyelik -->
-      <div class="menu-card bg-white border border-latte/30 rounded-2xl p-7 text-center flex flex-col reveal">
-        <p class="font-sans font-semibold text-espresso/60 uppercase tracking-widest text-xs mb-2">Aylık</p>
-        <h3 class="font-serif text-2xl font-bold text-espresso mb-4">Aylık Üyelik</h3>
-        <p class="font-serif text-4xl font-bold text-sage mb-1">150₺</p>
-        <p class="text-espresso/60 text-xs font-sans mb-5">günlük / toplam 4.500₺</p>
-        <ul class="text-espresso/65 text-sm font-sans space-y-2 text-left mx-auto mb-6">
+      <div class="menu-card bg-white border border-latte/30 rounded-2xl p-7 flex flex-col reveal">
+        <p class="font-sans font-semibold text-espresso/60 uppercase tracking-[0.18em] text-xs mb-1.5 text-center">Aylık</p>
+        <h3 class="font-serif text-2xl font-bold text-espresso mb-5 text-center">Aylık Üyelik</h3>
+
+        <div class="space-y-2 mb-3">
+          <div class="flex items-center justify-between bg-cream rounded-xl px-4 py-3">
+            <span class="text-espresso/75 text-sm font-sans font-medium">☕ Kahve ikramlı</span>
+            <span class="font-serif font-bold text-espresso text-xl">4.500₺</span>
+          </div>
+          <div class="flex items-center justify-between bg-sage/10 border border-sage/30 rounded-xl px-4 py-3">
+            <span class="text-espresso/75 text-sm font-sans font-medium">🍵 Çay ikramlı</span>
+            <span class="font-serif font-bold text-sagedark text-2xl">3.750₺</span>
+          </div>
+        </div>
+        <p class="text-espresso/60 text-xs font-sans italic leading-relaxed mb-5 px-1">
+          Güne sadece ☕ 150₺ / 🍵 125₺'ye denk gelir.
+        </p>
+
+        <ul class="w-full text-espresso/70 text-sm font-sans space-y-2.5 pt-5 border-t border-latte/25 mb-6">
           <li>📌 Kişiye özel masa</li>
           <li>📶 Hızlı internet</li>
           <li>🤫 Sessiz ortam</li>
-          <li>☕ Her gün ilk içecek ücretsiz</li>
           <li>📝 Deneme sınavı 150₺</li>
         </ul>
-        <a href="#contact" class="mt-auto border border-espresso/25 hover:bg-espresso hover:text-cream text-espresso font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
+        <a href="#contact" class="mt-auto text-center border border-espresso/25 hover:bg-espresso hover:text-cream text-espresso font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
           Başvur
         </a>
       </div>
 
       <!-- Yıllık Üyelik -->
-      <div class="menu-card bg-espresso border-2 border-sage rounded-2xl p-7 text-center flex flex-col relative reveal">
-        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sage text-white text-xs font-sans font-semibold px-4 py-1 rounded-full">
-          En Avantajlı
+      <div class="menu-card bg-espresso border-2 border-sage rounded-2xl p-7 flex flex-col relative reveal">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sage text-white text-xs font-sans font-semibold px-4 py-1 rounded-full whitespace-nowrap">
+          ⭐ En Avantajlı
         </span>
-        <p class="font-sans font-semibold text-latte uppercase tracking-widest text-xs mb-2">Yıllık · 1 Ekim – 15 Haziran</p>
-        <h3 class="font-serif text-2xl font-bold text-cream mb-4">Yıllık Üyelik</h3>
-        <p class="font-serif text-4xl font-bold text-sage mb-1">100₺</p>
-        <p class="text-cream/60 text-xs font-sans mb-5">günlük / toplam 35.000₺</p>
-        <ul class="text-cream/70 text-sm font-sans space-y-2 text-left mx-auto mb-6">
+        <p class="font-sans font-semibold text-latte uppercase tracking-[0.18em] text-xs mb-1.5 text-center">Yıllık · 1 Ekim – 15 Haziran</p>
+        <h3 class="font-serif text-2xl font-bold text-cream mb-5 text-center">Yıllık Üyelik</h3>
+
+        <div class="space-y-2 mb-3">
+          <div class="flex items-center justify-between bg-white/10 rounded-xl px-4 py-3">
+            <span class="text-cream/85 text-sm font-sans font-medium">☕ Kahve ikramlı</span>
+            <span class="font-serif font-bold text-cream text-xl">35.000₺</span>
+          </div>
+          <div class="flex items-center justify-between bg-sage/25 border border-sage/50 rounded-xl px-4 py-3">
+            <span class="text-cream/85 text-sm font-sans font-medium">🍵 Çay ikramlı</span>
+            <span class="font-serif font-bold text-sage text-2xl">25.000₺</span>
+          </div>
+        </div>
+        <p class="text-cream/60 text-xs font-sans italic leading-relaxed mb-5 px-1">
+          Tüm eğitim sezonu boyunca geçerlidir. 💳 Taksitli ödeme imkânı için bize ulaşın.
+        </p>
+
+        <ul class="w-full text-cream/75 text-sm font-sans space-y-2.5 pt-5 border-t border-cream/15 mb-6">
           <li>📌 Kişiye özel masa</li>
           <li>📶 Hızlı internet</li>
           <li>🤫 Sessiz ortam</li>
           <li>📝 Deneme sınavı ücretsiz</li>
-          <li>☕ Her gün ilk içecek ücretsiz</li>
           <li>🤝 Destek</li>
         </ul>
-        <a href="#contact" class="mt-auto bg-sage hover:bg-sagedark text-white font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
+        <a href="#contact" class="mt-auto text-center bg-sage hover:bg-sagedark text-white font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
           Başvur
         </a>
       </div>
