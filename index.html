@@ -6,12 +6,22 @@
   <meta name="description" content="Odak Kütüphane & Kafe — Kocaeli Derince'nin sessiz çalışma alanı. Güçlü wifi, kaliteli kahve ve huzurlu bir ortamda odaklanın." />
   <meta name="theme-color" content="#2C1A0E" />
   <meta name="google-site-verification" content="qI1At4Y4rnAxvvdvVOqjh2-W3Gk-s5YmIXCE4LgPljs" />
+
+  <!-- Google Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6J1EFCX35Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6J1EFCX35Z');
+  </script>
   <title>Odak Kütüphane & Kafe — Derince, Kocaeli | Sessiz Çalışma Alanı</title>
   <link rel="canonical" href="https://odakkutuphanekafe.com/" />
 
   <!-- Favicon (Google arama sonuçlarında da görünür) -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
 
   <!-- Sosyal medya önizleme (Open Graph / Twitter) -->
   <meta property="og:type" content="website" />
@@ -52,8 +62,16 @@
         "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         "opens": "10:00",
         "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Monday",
+        "opens": "10:00",
+        "closes": "22:00",
+        "validFrom": "2026-11-01"
       }
     ],
+    "sameAs": ["https://instagram.com/odakkutuphane"],
     "servesCuisine": "Kahve ve içecekler",
     "priceRange": "₺₺"
   }
@@ -229,9 +247,13 @@
       Sessiz bir alan, güçlü bir bağlantı ve iyi bir kahve.<br class="hidden sm:block"/>
       Çalışmak için ihtiyacınız olan her şey bir arada.
     </p>
-    <div class="flex justify-center reveal">
+    <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
+      <a href="#pricing"
+        class="inline-flex items-center justify-center gap-2 bg-sage hover:bg-sagedark text-white font-sans font-semibold px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-black/20">
+        Masanı Ayırt
+      </a>
       <a href="#location"
-        class="inline-flex items-center gap-2 bg-sage hover:bg-sagedark text-white font-sans font-semibold px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-black/20">
+        class="inline-flex items-center justify-center gap-2 border border-cream/60 hover:bg-cream hover:text-espresso text-cream font-sans font-semibold px-8 py-3.5 rounded-full transition-colors backdrop-blur-sm">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/>
         </svg>
@@ -364,7 +386,7 @@
           <li>🤫 Sessiz ortam</li>
           <li>📝 Deneme sınavı 150₺</li>
         </ul>
-        <a href="#contact" class="mt-auto text-center border border-espresso/25 hover:bg-espresso hover:text-cream text-espresso font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
+        <a href="#contact" onclick="preselectSubject('Başvuru')" class="mt-auto text-center border border-espresso/25 hover:bg-espresso hover:text-cream text-espresso font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
           Başvur
         </a>
       </div>
@@ -394,7 +416,7 @@
           <li>🤫 Sessiz ortam</li>
           <li>📝 Deneme sınavı 150₺</li>
         </ul>
-        <a href="#contact" class="mt-auto text-center border border-espresso/25 hover:bg-espresso hover:text-cream text-espresso font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
+        <a href="#contact" onclick="preselectSubject('Başvuru')" class="mt-auto text-center border border-espresso/25 hover:bg-espresso hover:text-cream text-espresso font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
           Başvur
         </a>
       </div>
@@ -428,7 +450,7 @@
           <li>📝 Deneme sınavı ücretsiz</li>
           <li>🤝 Destek</li>
         </ul>
-        <a href="#contact" class="mt-auto text-center bg-sage hover:bg-sagedark text-white font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
+        <a href="#contact" onclick="preselectSubject('Başvuru')" class="mt-auto text-center bg-sage hover:bg-sagedark text-white font-sans font-semibold text-sm px-6 py-3 rounded-full transition-colors">
           Başvur
         </a>
       </div>
@@ -456,9 +478,9 @@
     <!-- Üye avantajı bandı -->
     <div class="bg-sage/10 border border-sage/25 rounded-2xl px-6 py-5 mb-12 text-center reveal">
       <p class="font-sans text-espresso/80 text-sm md:text-base">
-        <span class="mr-1">🎉</span>
+        <span class="mr-1">🎁</span>
         <span class="font-semibold text-sagedark">Üyelerimize özel:</span>
-        Tüm içeceklerde avantajlı üye fiyatları geçerlidir. Detaylar için bize ulaşın.
+        Tüm üyeliklerde her güne bir ikram içecek dahildir — kahve ya da çay, seçim senin.
       </p>
     </div>
 
@@ -547,7 +569,7 @@
     </div>
 
     <p class="text-espresso/55 text-xs font-sans mt-10 text-center reveal">
-      Güncel menü ve üye fiyatları için şubemize uğrayabilir veya bize yazabilirsiniz.
+      Güncel menü için şubemize uğrayabilir veya bize yazabilirsiniz.
     </p>
   </div>
 </section>
@@ -774,6 +796,7 @@
         <p>📍 Yenikent Mah. Hayal Sok. No:17/B, Derince / Kocaeli</p>
         <p>📞 0506 878 03 41</p>
         <p>✉️ derincekutuphane@gmail.com</p>
+        <p>📸 <a href="https://instagram.com/odakkutuphane" target="_blank" rel="noopener" class="hover:text-sage transition-colors underline-offset-2 hover:underline">@odakkutuphane</a></p>
         <p>🕙 Salı – Pazar 10:00 – 22:00 (Ekim'de Pazartesi kapalı)</p>
       </div>
     </div>
@@ -839,6 +862,13 @@
     const isApplication = document.getElementById('cf-subject').value === 'Başvuru';
     document.getElementById('cf-age-wrap').classList.toggle('hidden', !isApplication);
     document.getElementById('cf-age').required = isApplication;
+  }
+
+  // Abonelik kartlarındaki "Başvur" butonları formda konuyu otomatik seçer
+  function preselectSubject(value) {
+    const sel = document.getElementById('cf-subject');
+    sel.value = value;
+    toggleAgeField();
   }
 
   form.addEventListener('submit', async (e) => {
