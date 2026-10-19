@@ -76,6 +76,78 @@
     "priceRange": "₺₺"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Üyelik nasıl başlatılır?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Üyelik işlemleri için WhatsApp üzerinden bizimle iletişime geçmeniz yeterlidir. Üyeliğiniz başladıktan sonra kütüphaneyi doğrudan kullanabilirsiniz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Günlük giriş için rezervasyon gerekiyor mu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hayır, rezervasyon gerekmez. Uygun olduğunuzda gelmeniz yeterlidir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Masam sabit mi oluyor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hayır. İstediğiniz masaya oturabilirsiniz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "İkram içecek nasıl çalışıyor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Her gün, seçtiğiniz giriş yöntemine göre bir ikram hakkınız vardır. Menüde hangi içeceklerin dahil olduğunu görebilirsiniz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Deneme sınavları nasıl işliyor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Her hafta Türkiye genelindeki tüm yayınlardan deneme sınavı temin ediyoruz. Denemeyi size veriyoruz; belirli bir saatte veya gözetmen eşliğinde çözülmesi gerekmez, istediğiniz yerde çözebilirsiniz. Farklı bir yayın isterseniz bize iletebilirsiniz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "İnternet hızı nasıl, masalarda priz var mı?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "İnternetimiz günlük web dolaşımı ve video izleme gibi kullanımlar için takılmadan yeterlidir. Neredeyse her masada priz bulunur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Yıllık üyelikte taksitli ödeme nasıl işliyor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Taksit seçenekleri için bizimle iletişime geçmeniz yeterlidir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Grup çalışması yapılabiliyor mu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ön alandaki hafif sesli bölümümüzde grup çalışması yapılabilir. Ortamı bozmamak için ses seviyesini mümkün olduğunca düşük tutmanızı rica ederiz."
+        }
+      }
+    ]
+  }
+  </script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -181,6 +253,27 @@
       border-color: #6B8F5E;
       box-shadow: 0 0 0 3px rgba(107,143,94,0.15);
     }
+
+    /* SSS accordion */
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.25rem;
+      line-height: 1;
+      color: #6B8F5E;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+    .faq-item[open] summary::after {
+      content: '–';
+    }
+    .faq-item[open] {
+      background: #fff;
+    }
   </style>
 </head>
 
@@ -203,6 +296,7 @@
       <li><a href="#pricing"  class="hover:text-sage transition-colors">Abonelik</a></li>
       <li><a href="#menu"     class="hover:text-sage transition-colors">Menü</a></li>
       <li><a href="#location" class="hover:text-sage transition-colors">Konum</a></li>
+      <li><a href="#faq"      class="hover:text-sage transition-colors">SSS</a></li>
       <li><a href="#contact"
         class="bg-espresso text-cream px-5 py-2 rounded-full hover:bg-coffee transition-colors">
         Bize Ulaşın
@@ -225,6 +319,7 @@
       <li><a href="#pricing"  class="hover:text-sage" onclick="closeMobileMenu()">Abonelik</a></li>
       <li><a href="#menu"     class="hover:text-sage" onclick="closeMobileMenu()">Menü</a></li>
       <li><a href="#location" class="hover:text-sage" onclick="closeMobileMenu()">Konum</a></li>
+      <li><a href="#faq"      class="hover:text-sage" onclick="closeMobileMenu()">SSS</a></li>
       <li><a href="#contact"  class="hover:text-sage" onclick="closeMobileMenu()">Bize Ulaşın</a></li>
     </ul>
   </div>
@@ -670,6 +765,101 @@
         class="inline-flex items-center justify-center gap-2 border border-cream/40 hover:bg-cream hover:text-espresso text-cream font-sans font-semibold px-8 py-3.5 rounded-full transition-colors">
         ⭐ Yorum Yaz
       </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ SSS ═══════════════════════ -->
+<section id="faq" class="py-24 px-6 bg-cream">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <p class="text-sage font-sans font-semibold uppercase tracking-widest text-sm mb-3">SSS</p>
+      <div class="divider mx-auto mb-6"></div>
+      <h2 class="font-serif text-4xl font-bold text-espresso mb-4">Sık Sorulan Sorular</h2>
+      <p class="text-espresso/60 font-sans text-sm">Üyelik, ikram ve çalışma düzeni hakkında merak edilenler.</p>
+    </div>
+
+    <div class="space-y-3">
+
+      <details class="faq-item bg-white border border-latte/30 rounded-2xl px-6 py-1 reveal">
+        <summary class="flex items-center justify-between gap-4 py-5 font-serif font-semibold text-espresso text-lg">
+          Üyelik nasıl başlatılır?
+        </summary>
+        <p class="text-espresso/70 font-sans text-sm leading-relaxed pb-5">
+          Üyelik işlemleri için WhatsApp üzerinden bizimle iletişime geçmeniz yeterlidir.
+          Üyeliğiniz başladıktan sonra kütüphaneyi doğrudan kullanabilirsiniz.
+        </p>
+      </details>
+
+      <details class="faq-item bg-white border border-latte/30 rounded-2xl px-6 py-1 reveal">
+        <summary class="flex items-center justify-between gap-4 py-5 font-serif font-semibold text-espresso text-lg">
+          Günlük giriş için rezervasyon gerekiyor mu?
+        </summary>
+        <p class="text-espresso/70 font-sans text-sm leading-relaxed pb-5">
+          Hayır, rezervasyon gerekmez. Uygun olduğunuzda gelmeniz yeterlidir.
+        </p>
+      </details>
+
+      <details class="faq-item bg-white border border-latte/30 rounded-2xl px-6 py-1 reveal">
+        <summary class="flex items-center justify-between gap-4 py-5 font-serif font-semibold text-espresso text-lg">
+          Masam sabit mi oluyor?
+        </summary>
+        <p class="text-espresso/70 font-sans text-sm leading-relaxed pb-5">
+          Hayır. İstediğiniz masaya oturabilirsiniz.
+        </p>
+      </details>
+
+      <details class="faq-item bg-white border border-latte/30 rounded-2xl px-6 py-1 reveal">
+        <summary class="flex items-center justify-between gap-4 py-5 font-serif font-semibold text-espresso text-lg">
+          İkram içecek nasıl çalışıyor?
+        </summary>
+        <p class="text-espresso/70 font-sans text-sm leading-relaxed pb-5">
+          Her gün, seçtiğiniz giriş yöntemine göre bir ikram hakkınız vardır.
+          Menüde hangi içeceklerin dahil olduğunu görebilirsiniz.
+        </p>
+      </details>
+
+      <details class="faq-item bg-white border border-latte/30 rounded-2xl px-6 py-1 reveal">
+        <summary class="flex items-center justify-between gap-4 py-5 font-serif font-semibold text-espresso text-lg">
+          Deneme sınavları nasıl işliyor?
+        </summary>
+        <p class="text-espresso/70 font-sans text-sm leading-relaxed pb-5">
+          Her hafta, Türkiye genelindeki tüm yayınlardan deneme sınavı temin ediyoruz.
+          Denemeyi size veriyoruz; belirli bir saatte veya gözetmen eşliğinde çözülmesi gerekmez,
+          istediğiniz yerde çözebilirsiniz. Farklı bir yayın isterseniz bize iletebilirsiniz.
+        </p>
+      </details>
+
+      <details class="faq-item bg-white border border-latte/30 rounded-2xl px-6 py-1 reveal">
+        <summary class="flex items-center justify-between gap-4 py-5 font-serif font-semibold text-espresso text-lg">
+          İnternet hızı nasıl, masalarda priz var mı?
+        </summary>
+        <p class="text-espresso/70 font-sans text-sm leading-relaxed pb-5">
+          İnternetimiz günlük web dolaşımı ve video izleme gibi kullanımlar için takılmadan yeterlidir.
+          Neredeyse her masada priz bulunur.
+        </p>
+      </details>
+
+      <details class="faq-item bg-white border border-latte/30 rounded-2xl px-6 py-1 reveal">
+        <summary class="flex items-center justify-between gap-4 py-5 font-serif font-semibold text-espresso text-lg">
+          Yıllık üyelikte taksitli ödeme nasıl işliyor?
+        </summary>
+        <p class="text-espresso/70 font-sans text-sm leading-relaxed pb-5">
+          Taksit seçenekleri için bizimle iletişime geçmeniz yeterlidir.
+        </p>
+      </details>
+
+      <details class="faq-item bg-white border border-latte/30 rounded-2xl px-6 py-1 reveal">
+        <summary class="flex items-center justify-between gap-4 py-5 font-serif font-semibold text-espresso text-lg">
+          Grup çalışması yapılabiliyor mu?
+        </summary>
+        <p class="text-espresso/70 font-sans text-sm leading-relaxed pb-5">
+          Ön alandaki hafif sesli bölümümüzde grup çalışması yapılabilir.
+          Ortamı bozmamak için ses seviyesini mümkün olduğunca düşük tutmanızı rica ederiz.
+        </p>
+      </details>
+
     </div>
   </div>
 </section>
