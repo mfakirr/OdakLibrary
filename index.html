@@ -565,92 +565,251 @@
       </p>
     </div>
 
-    <!-- Sıcak İçecekler -->
-    <h3 class="font-serif text-2xl text-espresso font-semibold mb-6 reveal">☕ Sıcak İçecekler</h3>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+    <!-- Menü kategorileri (fiyatlar sitede gösterilmez) -->
+    <div class="grid md:grid-cols-2 gap-6">
 
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
-        <span class="text-2xl mt-0.5">🫖</span>
-        <div>
-          <h4 class="font-serif font-semibold text-espresso text-lg">Filtre Kahve</h4>
-          <p class="text-espresso/55 text-sm mt-1">Uzun çalışma seansları için sade ve dengeli bir yol arkadaşı.</p>
-        </div>
+      <div class="menu-card bg-white border border-latte/30 rounded-2xl p-6 reveal">
+        <h3 class="font-serif text-2xl text-espresso font-semibold mb-4"><span class="mr-2">☕</span>Klasik Kahveler</h3>
+        <ul class="divide-y divide-latte/20">
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Espresso</p>
+            <p class="text-espresso/55 text-sm">Yoğun ve aromatik, tek shot.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Macchiato</p>
+            <p class="text-espresso/55 text-sm">Espresso üzerine bir kaşık süt köpüğü.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Americano</p>
+            <p class="text-espresso/55 text-sm">Sıcak suyla açılmış, sade ve güçlü.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Latte</p>
+            <p class="text-espresso/55 text-sm">Espresso ve kadifemsi buharlanmış süt.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Filtre Kahve</p>
+            <p class="text-espresso/55 text-sm">Uzun çalışma seansları için dengeli bir yol arkadaşı.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Türk Kahvesi</p>
+            <p class="text-espresso/55 text-sm">Geleneksel lezzet; sade, orta veya şekerli.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Dibek Kahvesi</p>
+            <p class="text-espresso/55 text-sm">Taş dibekte dövülmüş, yumuşak içimli.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span> <span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Sert kabuklu meyve</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Menengiç Kahvesi</p>
+            <p class="text-espresso/55 text-sm">Yabani fıstık (menengiç) ile hazırlanır.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span> <span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Sert kabuklu meyve</span></div>
+          </li>
+        </ul>
       </div>
 
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
-        <span class="text-2xl mt-0.5">💪</span>
-        <div>
-          <h4 class="font-serif font-semibold text-espresso text-lg">Americano</h4>
-          <p class="text-espresso/55 text-sm mt-1">Odak molalarında sade ve güçlü bir espresso deneyimi.</p>
-        </div>
+      <div class="menu-card bg-white border border-latte/30 rounded-2xl p-6 reveal">
+        <h3 class="font-serif text-2xl text-espresso font-semibold mb-4"><span class="mr-2">🍮</span>Aromalı Kahveler</h3>
+        <ul class="divide-y divide-latte/20">
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Vanilya Latte</p>
+            <p class="text-espresso/55 text-sm">Vanilya şurubu ile tatlandırılmış latte.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Caramel Latte</p>
+            <p class="text-espresso/55 text-sm">Karamel aromalı, yumuşak latte.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Toffee Nut Latte</p>
+            <p class="text-espresso/55 text-sm">Fındıklı karamel aromasıyla.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span> <span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Sert kabuklu meyve</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Mocha</p>
+            <p class="text-espresso/55 text-sm">Espresso, çikolata sos ve süt.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span> <span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Soya</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Chai Tea Latte</p>
+            <p class="text-espresso/55 text-sm">Baharatlı çay ve süt.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Orman Meyveli Latte</p>
+            <p class="text-espresso/55 text-sm">Orman meyvesi aromalı latte.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Ruby Çikolatalı Kahve</p>
+            <p class="text-espresso/55 text-sm">Pembe ruby çikolata ile hazırlanır.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span> <span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Soya</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Irish Odak</p>
+            <p class="text-espresso/55 text-sm">İmza kahvemiz; İrlanda kreması aromalı.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span></div>
+          </li>
+        </ul>
       </div>
 
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
-        <span class="text-2xl mt-0.5">🥛</span>
-        <div>
-          <h4 class="font-serif font-semibold text-espresso text-lg">Latte</h4>
-          <p class="text-espresso/55 text-sm mt-1">Kremsi, yumuşak içimli; günün her saati için klasik seçim.</p>
-        </div>
+      <div class="menu-card bg-white border border-latte/30 rounded-2xl p-6 reveal">
+        <h3 class="font-serif text-2xl text-espresso font-semibold mb-4"><span class="mr-2">🧊</span>Soğuk Kahveler</h3>
+        <ul class="divide-y divide-latte/20">
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Ice Latte</p>
+            <p class="text-espresso/55 text-sm">Buz, espresso ve soğuk süt.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Ice Vanilya Latte</p>
+            <p class="text-espresso/55 text-sm">Vanilyalı, buz gibi latte.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Ice Caramel Latte</p>
+            <p class="text-espresso/55 text-sm">Karamelli, buz gibi latte.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Ice Toffee Nut Latte</p>
+            <p class="text-espresso/55 text-sm">Fındıklı karamel aromalı soğuk latte.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span> <span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Sert kabuklu meyve</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Cold Brew</p>
+            <p class="text-espresso/55 text-sm">Soğuk demlenmiş, yumuşak ve ferah kahve.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+        </ul>
       </div>
 
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
-        <span class="text-2xl mt-0.5">☁️</span>
-        <div>
-          <h4 class="font-serif font-semibold text-espresso text-lg">Cappuccino</h4>
-          <p class="text-espresso/55 text-sm mt-1">Bol köpüklü ve dengeli; kahve ile sütün en tatlı buluşması.</p>
-        </div>
+      <div class="menu-card bg-white border border-latte/30 rounded-2xl p-6 reveal">
+        <h3 class="font-serif text-2xl text-espresso font-semibold mb-4"><span class="mr-2">🍋</span>Ferahlatıcılar</h3>
+        <ul class="divide-y divide-latte/20">
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Cool Lime</p>
+            <p class="text-espresso/55 text-sm">Misket limonu ve nane ile serinletici.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Berry Hibiscus</p>
+            <p class="text-espresso/55 text-sm">Hibiskus ve kırmızı meyveler.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Hierba De Cuba</p>
+            <p class="text-espresso/55 text-sm">Nane ve lime ile Küba esintisi.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Churchill</p>
+            <p class="text-espresso/55 text-sm">Soda, limon ve bir tutam tuz.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+        </ul>
       </div>
 
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
-        <span class="text-2xl mt-0.5">🇹🇷</span>
-        <div>
-          <h4 class="font-serif font-semibold text-espresso text-lg">Türk Kahvesi</h4>
-          <p class="text-espresso/55 text-sm mt-1">Közde pişmiş tadıyla geleneksel lezzet; sade, orta veya şekerli.</p>
-        </div>
+      <div class="menu-card bg-white border border-latte/30 rounded-2xl p-6 reveal">
+        <h3 class="font-serif text-2xl text-espresso font-semibold mb-4"><span class="mr-2">🫖</span>Sıcak İçecekler</h3>
+        <ul class="divide-y divide-latte/20">
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Sıcak Çikolata</p>
+            <p class="text-espresso/55 text-sm">Yoğun ve kremamsı.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span> <span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Soya</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Salep</p>
+            <p class="text-espresso/55 text-sm">Tarçınla servis edilen kış klasiği.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Çay</p>
+            <p class="text-espresso/55 text-sm">Taze demlenmiş Türk çayı.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Bitki Çayı</p>
+            <p class="text-espresso/55 text-sm">Ihlamur, ada çayı, papatya ve daha fazlası.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+        </ul>
       </div>
 
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
-        <span class="text-2xl mt-0.5">🌿</span>
-        <div>
-          <h4 class="font-serif font-semibold text-espresso text-lg">Çay & Bitki Çayları</h4>
-          <p class="text-espresso/55 text-sm mt-1">Demlik çay, ıhlamur, ada çayı ve papatya; içinizi ısıtan seçenekler.</p>
-        </div>
+      <div class="menu-card bg-white border border-latte/30 rounded-2xl p-6 reveal">
+        <h3 class="font-serif text-2xl text-espresso font-semibold mb-4"><span class="mr-2">🥤</span>Şişe & Kutu İçecekler</h3>
+        <ul class="divide-y divide-latte/20">
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Kola / Fanta / Sprite</p>
+            <p class="text-espresso/55 text-sm">Şişe gazlı içecekler.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Monster</p>
+            <p class="text-espresso/55 text-sm">Enerji içeceği.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Cappy</p>
+            <p class="text-espresso/55 text-sm">Meyve suyu.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Fuse Tea</p>
+            <p class="text-espresso/55 text-sm">Soğuk çay.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Soda & Meyveli Soda</p>
+            <p class="text-espresso/55 text-sm">Maden suyu çeşitleri.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+          <li class="py-3">
+            <p class="font-serif font-semibold text-espresso">Su</p>
+            <p class="text-espresso/55 text-sm">Pet şişe su.</p>
+            <div class="flex flex-wrap gap-1.5 mt-1.5"><span class="inline-block text-[11px] font-sans text-sagedark/80">Alerjen içermez</span></div>
+          </li>
+        </ul>
       </div>
 
     </div>
 
-    <!-- Soğuk İçecekler -->
-    <h3 class="font-serif text-2xl text-espresso font-semibold mb-6 reveal">🧊 Soğuk İçecekler</h3>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
-        <span class="text-2xl mt-0.5">🌙</span>
-        <div>
-          <h4 class="font-serif font-semibold text-espresso text-lg">Cold Brew</h4>
-          <p class="text-espresso/55 text-sm mt-1">12 saat sabırla demlenen, yumuşak ve ferahlatıcı soğuk kahve.</p>
-        </div>
+    <!-- Sandviç menüsü -->
+    <div class="menu-card bg-sage/10 border border-sage/25 rounded-2xl p-6 mt-6 reveal flex flex-col sm:flex-row sm:items-center gap-4">
+      <span class="text-3xl">🥪</span>
+      <div>
+        <h3 class="font-serif text-2xl text-espresso font-semibold">Sandviç + İçecek</h3>
+        <p class="text-espresso/60 text-sm mt-1">Labne, kahvaltılık çemen, salam, yeşil ve kırmızı biber, domates ve kekikli zeytinyağı sos arasından dilediğin malzemelerle hazırlanır + içecek.</p>
+        <div class="flex flex-wrap gap-1.5 mt-2"><span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Gluten</span> <span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Susam</span> <span class="inline-block text-[11px] font-sans font-medium bg-latte/20 text-coffee rounded-full px-2 py-0.5">Süt (labne, isteğe bağlı)</span> <span class="inline-block text-[11px] font-sans text-espresso/55">· Salam ve çemen nedeniyle soya, hardal ve ceviz içerebilir</span></div>
       </div>
-
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
-        <span class="text-2xl mt-0.5">🧋</span>
-        <div>
-          <h4 class="font-serif font-semibold text-espresso text-lg">Iced Latte</h4>
-          <p class="text-espresso/55 text-sm mt-1">Buz gibi süt ve espresso; sıcak günlerin kurtarıcısı.</p>
-        </div>
-      </div>
-
-      <div class="menu-card bg-white border border-latte/30 rounded-xl p-5 flex items-start gap-4 reveal">
-        <span class="text-2xl mt-0.5">🍋</span>
-        <div>
-          <h4 class="font-serif font-semibold text-espresso text-lg">Limonata & Meyve Suları</h4>
-          <p class="text-espresso/55 text-sm mt-1">Kahve içmeyenler için taze sıkılmış, ferah alternatifler.</p>
-        </div>
-      </div>
-
     </div>
+
+    <!-- Alerjen rehberi -->
+    <details class="mt-10 bg-cream/60 border border-latte/30 rounded-2xl p-6 reveal">
+      <summary class="cursor-pointer font-serif text-xl font-semibold text-espresso">⚠️ Alerjen Bilgilendirmesi</summary>
+      <div class="mt-4 font-sans text-sm text-espresso/75 space-y-3">
+        <p>Ürünlerimizin altındaki etiketler, Türk Gıda Kodeksi'nde tanımlanan 14 alerjen grubundan içerdiklerini gösterir:
+          gluten içeren tahıllar, kabuklular, yumurta, balık, yer fıstığı, soya, süt (laktoz dahil), sert kabuklu meyveler (fındık, badem, Antep fıstığı vb.), kereviz, hardal, susam, sülfitler, acı bakla ve yumuşakçalar.</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><strong>Süt:</strong> Latte, macchiato, mocha, salep, sıcak çikolata ve tüm aromalı/soğuk lattelar.</li>
+          <li><strong>Susam:</strong> Sandviç ekmeği.</li>
+          <li><strong>Soya:</strong> Çikolata içeren ürünler (Mocha, Sıcak Çikolata, Ruby Çikolatalı Kahve).</li>
+          <li><strong>Sert kabuklu meyve:</strong> Toffee Nut Latte çeşitleri, Dibek ve Menengiç Kahvesi. Antep fıstığı alerjisi olanların menengiçten kaçınması önerilir.</li>
+          <li><strong>Sandviç:</strong> Ekmek gluten ve susam içerir. Labne süt içerir; istemezseniz çıkarabiliriz. Salam ve kahvaltılık çemen; soya, hardal ve sert kabuklu meyve (ceviz) içerebilir. Biber, domates ve kekikli zeytinyağı sos alerjen içermez.</li>
+        </ul>
+        <p>Tüm ürünlerimiz aynı bar alanında hazırlandığından eser miktarda çapraz bulaşma olabilir. Gıda alerjiniz varsa lütfen siparişten önce ekibimize bildirin.</p>
+      </div>
+    </details>
 
     <p class="text-espresso/55 text-xs font-sans mt-10 text-center reveal">
-      Güncel menü için şubemize uğrayabilir veya bize yazabilirsiniz.
+      Güncel fiyatlar için şubemize uğrayabilir veya bize yazabilirsiniz.
     </p>
   </div>
 </section>
